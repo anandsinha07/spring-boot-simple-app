@@ -22,12 +22,14 @@ public class Hello {
     @Id
     @GeneratedValue
     private Integer id;
-    @JsonProperty("name")
+//    @JsonProperty("name")
     private String name;
+    private String address;
 
     public Hello(){}
 
-    public Hello(String name) {
+    public Hello(String name, String address) {
         this.name = name;
+        this.address = address;
     }
 }

@@ -25,7 +25,9 @@ public class HelloDeserializer extends StdDeserializer<HelloRequest> {
             throws IOException, JsonProcessingException {
         JsonNode node = jp.getCodec().readTree(jp);
         String name = node.get("name").asText();
-        return new HelloRequest(new Hello(name));
+        String address = node.get("address").asText();
+
+        return new HelloRequest(new Hello(name, address));
 
     }
 }
